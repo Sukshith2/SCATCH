@@ -7,15 +7,16 @@ const usersSchema =  mongose.Schema({
     email : String,
     password : String,
     contact : Number,
-    cart : {
-        type : Array,
-        default : []
-    },
+    cart : [
+        {
+        type : mongose.Schema.Types.ObjectId,
+        ref : "products"
+    }
+],
     orders : {
         type : Array,
         default : []
     },
-    isadmin : Boolean,
     picture : String,
 });
 
